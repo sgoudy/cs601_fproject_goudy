@@ -1,7 +1,7 @@
 <template>
     <section>
    <section class="container">
-    <Header />
+    <Top />
     <section class="right">
       <figure>
         <img src="../assets/meJoeKev.jpg" alt="Shelby, Joey, Kevin (left to right) for a closeup in winter clothes in the woods.">
@@ -91,15 +91,15 @@
       
     </section>  
     </section>
-    <Footer/>
+    <Bottom/>
     </section>
 </template>
 
 <script>
-import Header from "../components/Header.vue"
-import Footer from "../components/Footer.vue";
+import Top from "../components/Top.vue";
+import Bottom from "../components/Bottom.vue";
     export default {
-        components: {Header, Footer },
+        components: {Top,Bottom},
         name: "contact",
        
         // methods: {

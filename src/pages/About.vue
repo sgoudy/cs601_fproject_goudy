@@ -1,7 +1,7 @@
 <template>
 <section>
 <section class="container">
-     <Header />
+     <Top />
     <section class="right">
           <figure>
             <img src="../assets/LtBootNugMe.jpg" alt="Young Shelby in camouflage with an aircraft in the background">
@@ -18,38 +18,11 @@
         <hr>
         <section class="table">
           <h2>My Timeline</h2>
-         
           <table>
-            <tr>
-              <th><strong>Year</strong></th>
-              <th><strong>School</strong></th>
-              <th><strong>Degree Type</strong></th>
-              <th><strong>Field of Study</strong></th>
-            </tr>
-            <tr>
-              <td>2020 - 2022</td>
-              <td>Boston University</td>
-              <td>MS</td>
-              <td>Software Development</td>
-            </tr>
-              <tr>
-                <td>2020 - 2020</td>
-                <td>Team Treehouse</td>
-                <td>TechDegree Certification</td>
-                <td>Full Stack JS</td>
-              </tr>
-              <tr>
-                <td>2019 - 2020</td>
-                <td>Seton Hill University</td>
-                <td>MBA</td>
-                <td>Entrepreneurship</td>
-              </tr>
-              <tr>
-                <td>2005 - 2009</td>
-                <td>Norwich University</td>
-                <td>BS</td>
-                <td>Civil Engineering</td>
-              </tr>
+            <th v-for="(key, value) in schoolData" :key="key">
+                <tr class="th">{{value}}</tr>
+                <tr v-for="(x,y) in key" :key="y">{{x}}</tr>
+            </th>
           </table>
           <br />
         </section>
@@ -62,42 +35,54 @@
         <hr>
         <section>
           <h2>Favorite Part About Working from Home!</h2>
-          <video src="../assets/leaves.mp4" controls></video>
+          <video src="@/assets/leaves.mp4" controls></video>
           <p>
             I shot this footage yesterday. I really enjoy being able to get my work done on my own time (be it 0400 in the morning or 7 pm) so that I can go and explore when and where I like.
+             
           </p>
+          <button v-on:click="getSchoolData">Get School Data</button>
+                <p v-if="trial != null">The first school I went to was {{trial.School[0]}} in {{trial.Year_Conferred[0]}}.</p>
+                <p v-else>Click the button to see my fetch function, with async/await, in action!</p>
         </section>
         </section>  
     </section>    
-     <Footer />
+     <Bottom />
     </section>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-    export default {
-        components: { Header, Footer},
-        name: "about"
+import Top from "../components/Top.vue";
+import Bottom from "../components/Bottom.vue";
+import Data from "../config/data.json";
+
+export default {
+    components: { Top, Bottom},
+    name: "about",
+    data() {
+        return {
+            schoolData: Data,
+            trial: null
+        };
+    },
+    methods: {
+        async getSchoolData() {
+            await fetch("/data1.json")
+                .then(r => r.json())
+                .then((data) => {
+                    this.trial = data;
+                    console.log(this.trial);
+                    })
+            .catch(err => {
+          // Do something for an error here
+          console.log("Error Reading data " + err);
+        });
+        }
     }
+};
 </script>
 
 <style scoped>
-    table{
-        margin: 0 auto;
-        border: solid lightcyan 2px;
-    }
-
-    th{
-        text-transform: uppercase;
-        font-size: 20px;
-        padding: 10px;
-    }
-    td{
-        padding: 10px;
-        border: solid lightcyan 1px;
-    }
-
+    
     ul{
         list-style-type: none;
     }

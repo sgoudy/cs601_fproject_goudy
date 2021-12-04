@@ -70,8 +70,24 @@
         flex-direction: column;
     }
 
+    table{
+        margin: 0 auto;
+        border: solid lightcyan 2px;
+    }
 
-
+    .th{
+        text-transform: uppercase;
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+    tr{
+        font-weight: 100;
+        /* padding: 10px;
+        margin: 10px; */
+        /* border: 1px solid white; */
+    }
+   
     .container{
         display: flex;
         flex-direction: row;
@@ -132,14 +148,15 @@
     }
     
     table{
-        margin: 2px;
+        margin: 0 auto;
         font-size: 12px;
     }
 
-    th{
+    .th{
         text-transform: uppercase;
         font-size: 12px;
         padding: 3px;
+        border-bottom: solid 1px white;
     }
     td{
         padding: 3px;

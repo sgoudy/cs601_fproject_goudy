@@ -1,0 +1,7 @@
+
+{ 
+    "School": ["Norwich University", "Seton Hill University", "Team Treehouse", "Boston University"],
+    "Major": ["Civil Engineering", "Business Adminstration: Entrepreneurship", "Full-Stack JavaScript", "Software Development"],
+    "Type": ["BS", "MBA", "Tech-Degree", "MS"],
+    "Year Conferred": ["2009", "2020", "2020", "2022"]
+}

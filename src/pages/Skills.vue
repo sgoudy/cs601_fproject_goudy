@@ -1,7 +1,7 @@
 <template>
 <section>
     <section class="container">
-        <Header />
+        <Top />
        <section class="right">
             <figure>
                 <!-- <img src="../assets/meOnLu.JPG" alt="Shelby on her pony Pelusa with her horse friend Alex in the background"> -->
@@ -49,15 +49,15 @@
             <br>
             </section>
           </section>
-          <Footer/>
+          <Bottom/>
         </section>
 </template>
 
 <script>
-    import Header from "../components/Header.vue";
-    import Footer from "../components/Footer.vue";
+    import Top from "../components/Top.vue";
+    import Bottom from "../components/Bottom.vue";
     export default {
-        components: {Header, Footer},
+        components: {Top, Bottom},
         name: "skills"
     }
 </script>

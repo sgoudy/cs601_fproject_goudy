@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        name: "header",
+        name: "top",
         methods:{
             toggleMenu: function (){
     const nav = document.getElementsByTagName('nav')[0];

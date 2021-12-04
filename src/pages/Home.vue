@@ -1,7 +1,7 @@
 <template>
     <section>
     <section class="container">    
-        <Header />
+        <Top />
         <section class="right">
         <figure>
             <img src="../assets/hiking.jpg" alt="Shelby on the left, Joey her red heeler in the middle, and Kevin on the right. Sitting on a snow covered log in the woods." >
@@ -26,16 +26,16 @@
             <button v-on:click="startProgram" >Play with the Calculator & Customizer!</button>
         </section>
         </section>
-    <Footer />
+    <Bottom />
     </section>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
+import Top from "../components/Top.vue";
+import Bottom from "../components/Bottom.vue";
 
 export default {
-  components: { Header, Footer },
+  components: { Top, Bottom },
   name: "home",
   methods: {
     startProgram: function(){

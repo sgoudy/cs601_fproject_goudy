@@ -1,7 +1,7 @@
 <template>
     <section>
     <section class="container">
-        <Header />
+        <Top />
         <section class="right">
          
             <h2>View Some of My Full-Stack Projects</h2>
@@ -19,15 +19,15 @@
                 </section>
           </section>
         </section>
-        <Footer />
+        <Bottom />
         </section>
 </template>
 
 <script>
-    import Header from "../components/Header.vue";
-    import Footer from "../components/Footer.vue";
+    import Top from "../components/Top.vue";
+    import Bottom from "../components/Bottom.vue";
     export default {
-        components: {Header, Footer},
+        components: {Top, Bottom},
         name: "portfolio"
         
     }

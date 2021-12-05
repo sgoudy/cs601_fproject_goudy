@@ -3,7 +3,7 @@
 Brand new Vue user but I've started implementing it here for the purpose of building out my final project!
 
 ## Part 1: JSON
-There are two JSON files ('`portfolioData.json & schoolData.json`, located in the `public` folder).
+There are two JSON files (`portfolioData.json & schoolData.json`, located in the `public` folder).
 I access `data.json` in the config file to dynamically render my school data table on the About page.  
 
 ## Part 2: JSON and Fetch
@@ -31,4 +31,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# cs601_fproject_goudy

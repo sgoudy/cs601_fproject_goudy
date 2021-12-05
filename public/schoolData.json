@@ -2,21 +2,21 @@
 { 
     "Schools": [
         {
-            "School":{
+            "School_1":{
                 "Name": "Boston University",
                 "Major": "Software Development",
                 "Type": "MS",
                 "Year_Conferred": "2022"
             }
         },{
-            "School":{
+            "School_2":{
                 "Name": "Team Treehouse",
                 "Major": "Full-Stack JS",
                 "Type": "TechDegree",
                 "Year_Conferred": "2020"
             }
         },{
-            "School":{
+            "School_3":{
                 "Name": "Seton Hill University",
                 "Major": "Business Adminstration",
                 "Type": "MBA",
@@ -24,7 +24,7 @@
             }
         },
         {
-            "School":{
+            "School_4":{
                 "Name": "Norwich University",
                 "Major": "Civil Engineering",
                 "Type": "BS",

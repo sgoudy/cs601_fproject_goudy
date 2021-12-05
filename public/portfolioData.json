@@ -4,6 +4,7 @@
         "hrefLive": "http://diary-library.herokuapp.com/",
         "hrefRepo": "https://github.com/sgoudy/diary-library",
         "src": "/diary.png",
+        "alt": "screenshot",
         "key": 1
     },
     "2":{
@@ -11,6 +12,7 @@
         "hrefLive": "https://sgoudy.github.io/Techdegree-Project-1/",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-1",
         "src": "/p1.png",
+        "alt": "screenshot",
         "key": 2
     },
     "3":{
@@ -18,6 +20,7 @@
         "hrefLive": "https://sgoudy.github.io/Techdegree-Project-2/",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-2",
         "src": "/p2.png",
+        "alt": "screenshot",
         "key": 3
     },
     "4":{
@@ -25,6 +28,7 @@
         "hrefLive": "https://sgoudy.github.io/Techdegree-Project-3/",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-3",
         "src": "/p3.png",
+        "alt": "screenshot",
         "key": 4
     },
     "5":{
@@ -32,6 +36,7 @@
         "hrefLive": "https://sgoudy.github.io/Techdegree-Project-4/",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-4",
         "src": "/p4.png",
+        "alt": "screenshot",
         "key": 5
     },
     "6":{
@@ -39,6 +44,7 @@
         "hrefLive": "https://sgoudy.github.io/Techdegree-Project-5/",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-5",
         "src": "/p5.png",
+        "alt": "screenshot",
         "key": 6
     },
     "7":{
@@ -46,6 +52,7 @@
         "hrefLive": "https://portfolio-shelby-goudy.herokuapp.com/",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-6",
         "src": "/p6.png",
+        "alt": "screenshot",
         "key": 7
     },
     "8":{
@@ -53,6 +60,7 @@
         "hrefLive": "https://react-gallery-app-sgoudy.herokuapp.com/",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-7",
         "src": "/p7.png",
+        "alt": "screenshot",
         "key": 8
     },
     "9":{
@@ -60,7 +68,8 @@
         "hrefLive": "https://sgoudy-library.herokuapp.com/books",
         "hrefRepo": "https://github.com/sgoudy/Techdegree-Project-8",
         "src": "/p8.png",
-        "key": 8
+        "alt": "screenshot",
+        "key": 9
     }
 }
 

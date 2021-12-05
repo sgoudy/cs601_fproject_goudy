@@ -13,7 +13,6 @@
         <p>
           Originally from Annapolis, MD, I went to school at the oldest private military college in the U.S., Norwich University. Located in podunk Northfield, Vermont, it was the greatest life choice I ever made. Since then I've traveled to dozens of countries and seen 5 of 7 continents. I don't miss serving but I do miss my Marines and all of the incredibly unique experiences.
         </p>
-          
         <br />
         <hr>
         <section class="table">
@@ -24,11 +23,11 @@
                     <th>Type</th>
                     <th>Year</th>
                         <tr v-for="(schools, index) in fetchedData.Schools" :key="index">
-                            <td v-for="(school, index) in schools" :key="index">{{school.Name}}</td>
-                            <td v-for="(school, index) in schools" :key="index">{{school.Major}}</td>
-                            <td v-for="(school, index) in schools" :key="index">{{school.Type}}</td>
-                            <td v-for="(school, index) in schools" :key="index">{{school.Year_Conferred}}</td>
-                            </tr>
+                            <td v-for="(school, index) in schools" :key="index.Name">{{school.Name}}</td>
+                            <td v-for="(school, index) in schools" :key="index.Major">{{school.Major}}</td>
+                            <td v-for="(school, index) in schools" :key="index.Type">{{school.Type}}</td>
+                            <td v-for="(school, index) in schools" :key="index.Year_Conferred">{{school.Year_Conferred}}</td>
+                        </tr>
                 </table>
                 <p v-else>Click the button to see my fetch function, with async/await, in action!</p>
           <br />
@@ -68,10 +67,16 @@ export default {
     methods: {
         async getSchoolData() {
             await fetch("/schoolData.json")
-                .then(res => res.json())
+                .then(response => this.logData(response))
                 .then(data => this.fetchedData = data)
-                .catch(err => console.log("Error Reading data " + err));
-        }
+                .catch(err => console.log("Uh Oh: " + err.message));
+        },
+            logData(response){
+                if(response.status !== 200){
+                    throw new Error("Invalid response status, " + response.status);
+                } 
+                return response.json();
+            }
     }
 };
 </script>

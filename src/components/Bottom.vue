@@ -24,6 +24,8 @@
         flex-direction: column;
         align-items: center;
         padding-top: 20px;
-        background-color: #669900;
+        /* background-color: #669900; */
+        background-color: #618abb;
     }
+    
 </style>

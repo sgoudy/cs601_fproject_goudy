@@ -19,17 +19,19 @@
 </template>
 
 <script>
+
     export default {
+        
         name: "top",
         methods:{
             toggleMenu: function (){
-    const nav = document.getElementsByTagName('nav')[0];
-    if (nav.style.display == 'flex'){
-        nav.style.display = "none";
-    } else {
-        nav.style.display = 'flex';
-    }
-}
+                const nav = document.getElementsByTagName('nav')[0];
+                if (nav.style.display == 'flex'){
+                    nav.style.display = "none";
+                } else {
+                    nav.style.display = 'flex';
+                }
+            }
     }}
 </script>
 
@@ -44,4 +46,5 @@
         flex-grow: 1;
         text-align: center;
     }
+
 </style>

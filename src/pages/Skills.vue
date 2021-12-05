@@ -7,7 +7,7 @@
                 <img src="/meOnLu.jpg" alt="Shelby on her pony Pelusa with her horse friend Alex in the background">
                 <figcaption>Shelby and Pelusa.</figcaption>
             </figure>
-              <a class="resume" href="/ShelbyGoudyResume.pdf" id="resume" target="_blank" download>View My Resume</a><br><br>
+              <a class="resume" href="/ShelbyGoudyResume.pdf" id="resume" download>View My Resume</a><br><br>
             <hr>
                 <h2>Skills</h2>
                 <p>This list is not all-inclusive but just a summarization of some of my skills and qualifications. <br>
@@ -17,12 +17,12 @@
                         <h3>General</h3>
                         <p>12+ years experience</p>
                         <ul>
+                            <li>Aviation, Engineering, Systems Integration</li>
+                            <li>Project Management</li>
+                            <li>Military Operations & Logistics</li>
                             <li>Cross Functional Leadership</li>
                             <li>Communication & Time Management</li>
-                            <li>Military Operations & Logistics</li>
                             <li>Strategic, Operational, & Tactical Planning</li>
-                            <li>Project Management</li>
-                            <li>Aviation, Engineering, Systems Integration</li>
                             <li>Business Optimization</li>
                             <li>Planning & Scheduling</li>
                         </ul>
@@ -30,16 +30,16 @@
                     <hr>
                     <div>
                         <h3>Software</h3>
-                        <p>2 years experience, Preferred Stack: MERN</p>
+                        <p>2 years experience</p>
                         <ul>
                             <li>Java, JavaScript, Python, PHP</li>
-                            <li>MongoDB, MySQL</li>
+                            <li>Data Structures & Algorithms</li>
+                            <li>MongoDB, MySQL, SQLite3</li>
                             <li>React, Vue, HTML5, CSS3</li>
                             <li>OOP, Express, RESTful APIs</li>
-                            <li>Version Control Software (git & GitHub)</li>
+                            <li>VCS: git & GitHub</li>
                             <li>Full-Stack Applications</li>
-                            <li>WordPress, E-Commerce</li>
-                            <li>Search Engine Optimization</li>
+                            <li>WordPress, E-Commerce, SEO</li>
                         </ul>
                     </div>
                 </section> 
@@ -63,18 +63,32 @@
 </script>
 
 <style scoped>
-ul{
-    list-style-type: none;
-}
-.skills{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
 
-.skills div{
-    margin: 0 auto;
-}
+    ul{
+        list-style-type: none;
+    }
 
+    .skills{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .skills div{
+        margin: 0 auto;
+    }
+
+@media screen and (max-width: 992px) {
+
+  .skills{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    ul{
+        padding: 10px;
+    }
+}
 
 </style>

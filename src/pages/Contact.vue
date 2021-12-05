@@ -77,6 +77,7 @@
                 </div>
                 
             </form>
+            <br>
             </li>
           <li>
             <a href="mailto:shelbygoudy@gmail.com"> Email Me</a>
@@ -180,6 +181,7 @@ import Bottom from "../components/Bottom.vue";
 </script>
 
 <style scoped>
+
 form {
     display: flex;
     flex-direction: column;
@@ -187,11 +189,11 @@ form {
     border: 1px solid black;
     border-radius: 10px;
     text-align: center;
-    /* margin: 0 auto; */
     background-color: black;
     width: 70%;
     color: lightgray;
-}
+    }
+
 input{
     width: 80%;
     height: 30px;
@@ -214,4 +216,5 @@ input{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 </style>

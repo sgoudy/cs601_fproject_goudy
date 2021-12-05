@@ -19,10 +19,16 @@
         <section class="table">
           <h2>My Timeline</h2>
           <table>
-            <th v-for="(key, value) in schoolData" :key="key">
-                <tr class="th">{{value}}</tr>
-                <tr v-for="(x,y) in key" :key="y">{{x}}</tr>
-            </th>
+            <th>Name</th>
+            <th>Major</th>
+            <th>Type</th>
+            <th>Year</th>
+                <tr v-for="(schools, index) in schoolData.Schools" :key="index">
+                    <td v-for="(school, index) in schools" :key="index">{{school.Name}}</td>
+                    <td v-for="(school, index) in schools" :key="index">{{school.Major}}</td>
+                    <td v-for="(school, index) in schools" :key="index">{{school.Type}}</td>
+                    <td v-for="(school, index) in schools" :key="index">{{school.Year_Conferred}}</td>
+                    </tr>
           </table>
           <br />
         </section>
@@ -41,7 +47,7 @@
              
           </p>
           <button v-on:click="getSchoolData">Get School Data</button>
-                <p v-if="trial != null">The first school I went to was {{trial.School[0]}} in {{trial.Year_Conferred[0]}}.</p>
+                <p v-if="fetchedData != null">The first school I went to was {{fetchedData.Schools[3].School.Name}} in {{fetchedData.Schools[3].School.Year_Conferred}}. </p>
                 <p v-else>Click the button to see my fetch function, with async/await, in action!</p>
         </section>
         </section>  
@@ -61,20 +67,15 @@ export default {
     data() {
         return {
             schoolData: Data,
-            trial: null
+            fetchedData: null
         };
     },
     methods: {
         async getSchoolData() {
-            await fetch("/data1.json")
+            await fetch("/schoolData.json")
                 .then(r => r.json())
-                .then((data) => {
-                    this.trial = data;
-                    })
-            .catch(err => {
-          // Do something for an error here
-          console.log("Error Reading data " + err);
-        });
+                .then((data) => this.fetchedData = data)
+                .catch(err => console.log("Error Reading data " + err));
         }
     }
 };
@@ -82,9 +83,31 @@ export default {
 
 <style scoped>
     
+    
+    table{
+        margin: 0 auto;
+        border: solid lightcyan 2px;
+    }
+
+    th{
+        text-transform: uppercase;
+        padding: 10px;
+        border: solid 1px white;
+    }
+
+    tr{
+        font-weight: 100;
+    }
+
+    td{
+        border: solid 1px white;
+        padding: 4px;
+    }
+    
     ul{
         list-style-type: none;
     }
+
     .resume {
         text-transform: uppercase;
         text-decoration: none;

@@ -17,19 +17,20 @@
         <br />
         <hr>
         <section class="table">
-          <h2>My Timeline</h2>
-          <table>
-            <th>Name</th>
-            <th>Major</th>
-            <th>Type</th>
-            <th>Year</th>
-                <tr v-for="(schools, index) in schoolData.Schools" :key="index">
-                    <td v-for="(school, index) in schools" :key="index">{{school.Name}}</td>
-                    <td v-for="(school, index) in schools" :key="index">{{school.Major}}</td>
-                    <td v-for="(school, index) in schools" :key="index">{{school.Type}}</td>
-                    <td v-for="(school, index) in schools" :key="index">{{school.Year_Conferred}}</td>
-                    </tr>
-          </table>
+            <button v-on:click="getSchoolData">View School Info</button>
+                <table v-if="fetchedData != null">
+                    <th>Name</th>
+                    <th>Major</th>
+                    <th>Type</th>
+                    <th>Year</th>
+                        <tr v-for="(schools, index) in fetchedData.Schools" :key="index">
+                            <td v-for="(school, index) in schools" :key="index">{{school.Name}}</td>
+                            <td v-for="(school, index) in schools" :key="index">{{school.Major}}</td>
+                            <td v-for="(school, index) in schools" :key="index">{{school.Type}}</td>
+                            <td v-for="(school, index) in schools" :key="index">{{school.Year_Conferred}}</td>
+                            </tr>
+                </table>
+                <p v-else>Click the button to see my fetch function, with async/await, in action!</p>
           <br />
         </section>
         <hr>
@@ -44,11 +45,7 @@
           <video src="@/assets/leaves.mp4" controls></video>
           <p>
             I shot this footage yesterday. I really enjoy being able to get my work done on my own time (be it 0400 in the morning or 7 pm) so that I can go and explore when and where I like.
-             
           </p>
-          <button v-on:click="getSchoolData">Get School Data</button>
-                <p v-if="fetchedData != null">The first school I went to was {{fetchedData.Schools[3].School.Name}} in {{fetchedData.Schools[3].School.Year_Conferred}}. </p>
-                <p v-else>Click the button to see my fetch function, with async/await, in action!</p>
         </section>
         </section>  
     </section>    
@@ -59,22 +56,20 @@
 <script>
 import Top from "../components/Top.vue";
 import Bottom from "../components/Bottom.vue";
-import Data from "../config/data.json";
 
 export default {
     components: { Top, Bottom},
     name: "about",
     data() {
         return {
-            schoolData: Data,
             fetchedData: null
         };
     },
     methods: {
         async getSchoolData() {
             await fetch("/schoolData.json")
-                .then(r => r.json())
-                .then((data) => this.fetchedData = data)
+                .then(res => res.json())
+                .then(data => this.fetchedData = data)
                 .catch(err => console.log("Error Reading data " + err));
         }
     }

@@ -4,7 +4,7 @@
         <Top />
        <section class="right">
             <figure>
-                <img src="/meOnLu.jpg" alt="Shelby on her pony Pelusa with her horse friend Alex in the background">
+                <img src="../assets/meOnLu.jpg" alt="Shelby on her pony Pelusa with her horse friend Alex in the background">
                 <figcaption>Shelby and Pelusa.</figcaption>
             </figure>
               <a class="resume" href="/ShelbyGoudyResume.pdf" id="resume" download>View My Resume</a><br><br>

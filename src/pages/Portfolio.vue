@@ -4,7 +4,6 @@
         <Top />
         <section class="right">
             <h2>View Some of My Full-Stack Projects</h2>
-            <p><i>Numbered Projects Courtesy of the Team Treehouse Syllabus</i></p>
             <button v-on:click="getPortfolio">View Projects</button>
             <section v-if="projects != null" class="portfolio">
                 <article v-for="project in projects" :key="`${project.key}`">

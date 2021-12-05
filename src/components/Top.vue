@@ -9,8 +9,8 @@
             <img src="../assets/Hamburger_icon.png" height="50" alt="hamburger menu icon" id="hamburger"/></button>
         <nav>
             <a href="/">Home</a>
-            <a href="/skills">Skills</a>
             <a href="/portfolio">Portfolio</a>
+            <a href="/skills">Skills</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
         </nav>

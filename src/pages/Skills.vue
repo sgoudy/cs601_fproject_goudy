@@ -4,10 +4,10 @@
         <Top />
        <section class="right">
             <figure>
-                <!-- <img src="../assets/meOnLu.JPG" alt="Shelby on her pony Pelusa with her horse friend Alex in the background"> -->
+                <img src="../assets/meOnLu.jpg" alt="Shelby on her pony Pelusa with her horse friend Alex in the background">
                 <figcaption>Shelby and Pelusa.</figcaption>
             </figure>
-              <a class="resume" href="../assets/ShelbyGoudyResume.pdf" id="resume" target="_blank" download>View My Resume</a><br><br>
+              <a class="resume" href="/ShelbyGoudyResume.pdf" id="resume" target="_blank" download>View My Resume</a><br><br>
             <hr>
                 <h2>Skills</h2>
                 <p>This list is not all-inclusive but just a summarization of some of my skills and qualifications. <br>
@@ -34,7 +34,7 @@
                         <ul>
                             <li>Java, JavaScript, Python, PHP</li>
                             <li>MongoDB, MySQL</li>
-                            <li>HTML5, CSS</li>
+                            <li>React, Vue, HTML5, CSS3</li>
                             <li>OOP, Express, RESTful APIs</li>
                             <li>Version Control Software (git & GitHub)</li>
                             <li>Full-Stack Applications</li>
@@ -45,7 +45,7 @@
                 </section> 
                 <hr><br>
                     <img src="../assets/aplus.png" height="70" alt="A plus">
-                    <p>I was also the Team Lead for Capstone, our project is <a href="https://diary-library.herokuapp.com/" target="_blank">HERE.</a> (We received an A+) <br>For more information about me, please view my <a href="#resume">Resume.</a></p>
+                    <p>I was also the Team Lead for Capstone, our project is <a href="https://diary-library.herokuapp.com/" target="_blank">HERE.</a></p>
             <br>
             </section>
           </section>

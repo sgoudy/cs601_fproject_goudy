@@ -12,18 +12,19 @@
         <hr>
             <h2 id="heading"></h2>
             <p>
-                *** SEEKING REMOTE OPPORTUNITIES in Aviation or Automotive ***
+                *** SEEKING REMOTE OPPORTUNITIES in Defense, Aviation or Automotive ***
             </p>
+            <a class="resume" href="/ShelbyGoudyResume.pdf" target="_blank" download>View My Resume</a><br><br>
             <p>I'm a former Marine Corps Officer and Aviator. I served for a decade as an Osprey pilot (those helicopter/ plane combo things (MV-22B)). I thoroughly enjoyed it, but I am now enjoying civilian life even more thanks to some horses.</p>
     
-            <p>I decided I wanted to be able to work from home... got my <strong>MBA</strong>, and then randomly discovered software. I haven't looked back since. Surprisingly, I do find it just as (if not even more so) stimulating as flying. I love challenging my brain and can't wait to see where I end up.</p>
+            <p>I was forced into a career change due to medical circumstances outside my control. I got my <strong>MBA</strong> while I was figuring out what I wanted to do with my life, and then thankfully (and randomly) discovered software. I haven't looked back since. Surprisingly, I do find it just as (if not even more so) stimulating as flying. I love challenging my brain and can't wait to see where I end up.</p>
              
-           <p>I'm a huge gear-head and tinkerer. I love making things work so I'm hoping I could land somewhere in the <strong>automotive or aviation sector, as stated above.</strong></p>
+           <p>I'm a huge gear-head and tinkerer. I love making things work so I'm hoping I could land somewhere in the <strong>defense, aviation, or automotive sector.</strong></p>
     
-            <p>I volunteer at a ranch up the road everyday and work with the horses. They have been lifesaving and great for my soul. A lot of folks will never understand the difficulties in transitioning from active duty to the civilian world. I hope that I can take my experiences and share it with others that might need help.</p>
+            <p>I volunteer at a ranch up the road everyday and work with horses. They have been lifesaving and great for my soul. A lot of folks will never understand the difficulties in transitioning from active duty to the civilian world. I hope that I can take my experiences and share it with others that might need help.</p>
     
             <h3>Take a look around!</h3>
-            <button v-on:click="startProgram" >Play with the Calculator & Customizer!</button>
+            <!-- <button v-on:click="startProgram" >Play with the Calculator & Customizer!</button> -->
         </section>
         </section>
     <Bottom />
@@ -136,7 +137,5 @@ export default {
     flex-wrap: wrap;
     justify-content: space-around;
     }
-    img{
-    height: 100px;
-    }
+    
 </style>

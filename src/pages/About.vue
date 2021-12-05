@@ -7,7 +7,7 @@
             <img src="../assets/LtBootNugMe.jpg" alt="Young Shelby in camouflage with an aircraft in the background">
             <figcaption>Shelby in front of a MV-22B Osprey at MCAS New River, NC.</figcaption>
           </figure>
-          <a class="resume" href="..assets/ShelbyGoudyResume.pdf" target="_blank" download>View My Resume</a><br><br>
+          <a class="resume" href="/ShelbyGoudyResume.pdf" target="_blank" download>View My Resume</a><br><br>
         <hr>
         <h2>Background</h2>
         <p>
@@ -70,7 +70,6 @@ export default {
                 .then(r => r.json())
                 .then((data) => {
                     this.trial = data;
-                    console.log(this.trial);
                     })
             .catch(err => {
           // Do something for an error here

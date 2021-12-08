@@ -1,12 +1,4 @@
 {  
-    "1":{
-        "name": "Diary Library Capstone",
-        "hrefLive": "http://diary-library.herokuapp.com/",
-        "hrefRepo": "https://github.com/sgoudy/diary-library",
-        "src": "/diary.png",
-        "alt": "screenshot",
-        "key": 1
-    },
     "2":{
         "name": "Random Quote Generator",
         "hrefLive": "https://sgoudy.github.io/Techdegree-Project-1/",
@@ -70,6 +62,14 @@
         "src": "/p8.png",
         "alt": "screenshot",
         "key": 9
+    },
+    "10":{
+        "name": "Diary Library Capstone",
+        "hrefLive": "http://diary-library.herokuapp.com/",
+        "hrefRepo": "https://github.com/sgoudy/diary-library",
+        "src": "/diary.png",
+        "alt": "screenshot",
+        "key": 10
     }
 }
 

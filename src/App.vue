@@ -78,7 +78,6 @@
     }
 
     .leftSidebar{
-        float: left;
         flex-direction: column;
         width: 200px;
         padding: 20px;

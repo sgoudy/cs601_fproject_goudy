@@ -5,6 +5,7 @@
             <h2> MBA, MSSD</h2>
             <hr>
         </div>
+        
         <button class="menu" v-on:click="toggleMenu">
             <img src="../assets/Hamburger_icon.png" height="50" alt="hamburger menu icon" id="hamburger"/></button>
         <nav>

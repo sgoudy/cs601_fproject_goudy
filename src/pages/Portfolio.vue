@@ -3,8 +3,8 @@
     <section class="container">
         <Top />
         <section class="right">
-            <h2>View Some of My Full-Stack Projects</h2>
-            <button v-on:click="getPortfolio">View Projects</button>
+            <h2>Some Full-Stack Projects</h2>
+            <button v-on:click="getPortfolio">Let Me See!</button>
             <section v-if="projects != null" class="portfolio">
                 <article v-for="project in projects" :key="`${project.key}`">
                     <h4>{{project.name}}</h4>

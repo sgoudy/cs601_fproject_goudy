@@ -7,15 +7,10 @@
         <img src="../assets/meJoeKev.jpg" alt="Shelby, Joey, Kevin (left to right) for a closeup in winter clothes in the woods.">
           <figcaption>Shelby, Joey, and Kevin at Flat Rock.</figcaption>
       </figure>
-      
-      <h2>Want to get in touch?</h2>
-      <section class="justifyLeft">
-        <h4>In order of preference:</h4>
-        <ol class="list">
-            <li>
-            <span>
-                Submit Contact Form
-            </span>
+      <section>
+      <h2>Get in Touch</h2>
+      <hr>
+      <br>
             <form id="form" @submit="errorHandling" method="POST" action="https://bucs601.com/submit.php">
                 <div>
                     <h2>Contact Form</h2>
@@ -28,44 +23,43 @@
                         <input type="text" name="lastName" id="lastName" required>
                     </div>
                     <div id="facDiv">
-                        <label for="facilitator">Facilitator Name:*</label><br>
+                        <label for="facilitator">Email:*</label><br>
                         <input type="text" name="facilitator" id="facilitator" required>
                     </div>
                 </div>
                 <div>
                     <hr>
-                    <h3>I'm a:</h3>
+                    <h3>Goal:</h3>
                     <div class="ima">
                         <div>
-                            <label for="seeker">Job Seeker</label>
-                            <input name="status" type="radio" id="seeker" value="job seeker" checked><br>
+                            <label for="seeker">Let's Network</label>
+                            <input name="status" type="radio" id="seeker" value="job seeker" checked>
                         </div>
                        <div>
-                        <label for="poster">Job Poster</label>
+                        <label for="poster">Come Work With Us</label>
                         <input name="status" type="radio" id="poster" value="job poster">
                        </div>
                     </div>
                     <hr>
-                    
                 </div>
-                <div >
-                    <h3>Skill Set</h3>
-                    <h6>Job Seeker: Your Skills / Job Poster: Skills You Are Seeking for a Position</h6>
+                <div>
+                    <h3>Random Fact</h3>
+                    <h6>Favorite Animal</h6>
                     <div class="skillset">
                         <div>
-                            <label for="front">Front-End</label>
+                            <label for="front">Dog</label>
                             <input class="checkbox" type="checkbox" id="front" value="front-end" name="front"><br>
                         </div>
                         <div>
-                            <label for="back">Back-End</label>
+                            <label for="back">Cat</label>
                             <input class="checkbox" type="checkbox" id="back" value="back-end" name="back"><br>
                         </div>
                         <div>
-                            <label for="full">Full-Stack</label>
+                            <label for="full">Horse</label>
                             <input class="checkbox" type="checkbox" id="full" value="full-stack" name="full"><br>
                         </div>
                         <div>
-                            <label for="software">Software</label>
+                            <label for="software">None</label>
                             <input class="checkbox" type="checkbox" id="software" value="software" name="software"><br>
                         </div>
                     </div>
@@ -73,23 +67,12 @@
                 </div>
                 <br>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Giddy Up!</button>
                 </div>
                 
             </form>
             <br>
-            </li>
-          <li>
-            <a href="mailto:shelbygoudy@gmail.com"> Email Me</a>
-          </li>
-          <li><a href="https://www.linkedin.com/in/shelby-goudy/" target="_blank"> Connect with me on LinkedIn
-        </a></li>
-        <li>
-          <a href="tel:4432236514"> Call & leave a message!</a>
-        </li>
-        </ol>
       </section>
-      
     </section>  
     </section>
     <Bottom/>
@@ -192,6 +175,7 @@ form {
     background-color: black;
     width: 70%;
     color: lightgray;
+    margin: auto;
     }
 
 input{
@@ -204,10 +188,6 @@ input{
     font-size: 14px;
     color: red;
     display: none;
-}
-
-.justifyLeft{
-    text-align: left;
 }
 
 .skillset, .ima{

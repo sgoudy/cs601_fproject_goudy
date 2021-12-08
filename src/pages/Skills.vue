@@ -10,8 +10,7 @@
               <a class="resume" href="/ShelbyGoudyResume.pdf" id="resume" download>View My Resume</a><br><br>
             <hr>
                 <h2>Skills</h2>
-                <p>This list is not all-inclusive but just a summarization of some of my skills and qualifications. <br>
-                    I also pride myself on being 'Semper Gumby' (aka. always flexible). <br> I love change and adapting to situations on the fly (pun intended), though not much can beat when everything goes to plan. </p>
+                <p>NOT all-inclusive.</p>
                 <section class="skills">
                     <div>
                         <h3>General</h3>
@@ -45,7 +44,7 @@
                 </section> 
                 <hr><br>
                     <img src="../assets/aplus.png" height="70" alt="A plus">
-                    <p>I was also the Team Lead for Capstone, our project is <a href="https://diary-library.herokuapp.com/" target="_blank">HERE.</a></p>
+                    <p>Team Lead for <a href="https://diary-library.herokuapp.com/" target="_blank">Capstone Project</a><br>...not optimized for mobile :(</p>
             <br>
             </section>
           </section>

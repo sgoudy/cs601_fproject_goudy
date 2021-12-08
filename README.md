@@ -1,4 +1,8 @@
-# cs601_HW5_goudy
+https://sgoudy.netlify.app
+
+![screenshot](screenshot.png)
+
+# cs601_HW6_goudy
 
 Brand new Vue user but I've started implementing it here for the purpose of building out my final project!
 

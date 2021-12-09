@@ -11,9 +11,7 @@
       <h2>Get in Touch</h2>
       <hr>
       <br>
-            <form id="form" @submit="sendEmail"
-            
-            >
+            <form id="form" @submit="validateForm">
                 <div>
                     <h2>Contact Form</h2>
                     <div id="nameDiv">
@@ -28,8 +26,8 @@
                         <label>Message:*</label><br>
                         <textarea 
                             name="message"
-                            v-model="message"
-                            cols="30" rows="5"
+                            cols="30" 
+                            rows="5"
                             class="input" 
                             placeholder="Please include a brief message" 
                             required>
@@ -40,7 +38,6 @@
                 <div>
                     <input class="submit" type="submit" value="Giddy Up!">
                 </div>
-                
             </form>
             <br>
       </section>
@@ -55,84 +52,83 @@ import Top from "../components/Top.vue";
 import Bottom from "../components/Bottom.vue";
 import emailjs from 'emailjs-com';
 
-    export default {
-        components: {Top,Bottom},
-        name: "contact",
-        data() {
-            return {
-            name: '',
-            email: '',
-            message: ''
-            }
+export default {
+    components: {Top,Bottom},
+    name: "contact",
+    data() {
+        return {
+        name: '',
+        email: '',
+        message: ''
+        }
+    },
+    methods: {
+        sendEmail(e) {
+            console.log('sending email')
+            e.preventDefault();
+        try {
+            emailjs.sendForm('service_tkt6spc', 'template_b04s9g2', e.target,
+            'user_Xwa1ypJ5JyG6NVsWgu1MO', {
+            name: this.name,
+            email: this.email,
+            message: this.message
+            })
+            alert('Sent!');
+
+        } catch(error) {
+            console.log({error})
+        }
+        // Reset form field
+        this.name = ''
+        this.email = ''
+        this.message = ''
         },
-        methods: {
-            sendEmail(e) {
-                e.preventDefault();
-                console.log('here we go!')
-            try {
-                emailjs.sendForm('service_tkt6spc', 'template_b04s9g2', e.target,
-                'user_Xwa1ypJ5JyG6NVsWgu1MO', {
-                name: this.name,
-                email: this.email,
-                message: this.message
-                })
 
-            } catch(error) {
-                console.log({error})
+        validateForm(e){
+            console.log('validating')
+            // Created Error Handlers 
+            const name = document.getElementById('name');
+            const nameError = document.createElement('div');
+            const typeError = document.createElement('div');
+
+            // First Name min length = 2
+            nameError.innerHTML = 'The first name must be at least 2 letters.';
+            nameError.style.color = 'red';
+            nameError.style.fontSize = '14px';
+
+            // Names can only contain letters A-Z
+            typeError.innerHTML = 'Names should only include the letters A-Z'
+            typeError.style.fontSize = '14px';
+            typeError.style.color = 'red';
+
+            e.preventDefault();
+
+            // regex for alphabet characters only
+            const regex = /^[A-Za-z]+$/;
+
+            let shouldSubmit = true;
+
+            // remove all error elements from DOM
+            nameError.remove();
+            typeError.remove();
+
+            // check length >= 2
+            if (name.value.length < 2) {
+                shouldSubmit = false;
+                name.appendChild(nameError);  
             }
-            // Reset form field
-            this.name = ''
-            this.email = ''
-            this.message = ''
+
+            // check for any characters that don't match the regex
+            if (!name.value.match(regex)) {
+                shouldSubmit = false;
+                name.appendChild(typeError);
             }
-        ,
-            validateForm:function(e){
-                // Created Error Handlers for 4 Types of Errors
-                const name = document.getElementById('name');
-                const firstError = document.createElement('div');
-                const typeError = document.createElement('div');
 
-                // First Name min length = 2
-                firstError.innerHTML = 'The first name must be at least 2 letters.';
-                firstError.style.color = 'red';
-                firstError.style.fontSize = '14px';
-
-                // Names can only contain letters A-Z
-                typeError.innerHTML = 'Names should only include the letters A-Z'
-                typeError.style.fontSize = '14px';
-                typeError.style.color = 'red';
-
-                e.preventDefault();
-
-                // regex for alphabet characters only
-                const regex = /^[A-Za-z]+$/;
-
-                let shouldSubmit = true;
-
-                // remove all error elements from DOM
-                firstError.remove();
-                typeError.remove();
-
-                // check length >= 2
-                if (name.value.length < 2) {
-                    shouldSubmit = false;
-                    name.appendChild(firstError);  
-                }
-
-                // check for any characters that don't match the regex
-                if (!name.value.match(regex)) {
-                    shouldSubmit = false;
-                    name.appendChild(typeError);
-                }
-
-                if(shouldSubmit){
-                    console.log('simulate submit')
-                    this.sendEmail(e);
-                    // this.submit();
-                }
-            
-            }}
-    }
+            if(shouldSubmit){
+                this.sendEmail(e);
+            }
+        }}
+}
 </script>
 
 <style scoped>
@@ -148,28 +144,19 @@ import emailjs from 'emailjs-com';
         color: lightgray;
         margin: auto;
         }
-
-    .input, textarea{
+    .input{
         width: 80%;
         height: 30px;
         margin: 10px
     }
-
     .error{
         font-size: 14px;
         color: red;
         display: none;
     }
 
-    .skillset, .ima{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
     .submit{
-         text-transform: uppercase;
+        text-transform: uppercase;
         text-decoration: none;
         background-color: black;
         padding: 20px;

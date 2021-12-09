@@ -11,63 +11,34 @@
       <h2>Get in Touch</h2>
       <hr>
       <br>
-            <form id="form" @submit="errorHandling" method="POST" action="https://bucs601.com/submit.php">
+            <form id="form" @submit="sendEmail"
+            
+            >
                 <div>
                     <h2>Contact Form</h2>
-                    <div id="firstNameDiv">
-                        <label for="firstName">First Name:*</label><br>
-                        <input type="text" name="firstName" id="firstName" required>
-                    </div>
-                    <div id="lastNameDiv">
-                        <label for="lastName">Last Name:*</label><br>
-                        <input type="text" name="lastName" id="lastName" required>
+                    <div id="nameDiv">
+                        <label for="name">Name:*</label><br>
+                        <input class="input" type="text" name="name" id="name" required>
                     </div>
                     <div id="facDiv">
-                        <label for="facilitator">Email:*</label><br>
-                        <input type="text" name="facilitator" id="facilitator" required>
+                        <label for="email">Email:*</label><br>
+                        <input class="input" type="email" name="email" id="email" required>
                     </div>
-                </div>
-                <div>
-                    <hr>
-                    <h3>Goal:</h3>
-                    <div class="ima">
-                        <div>
-                            <label for="seeker">Let's Network</label>
-                            <input name="status" type="radio" id="seeker" value="job seeker" checked>
-                        </div>
-                       <div>
-                        <label for="poster">Come Work With Us</label>
-                        <input name="status" type="radio" id="poster" value="job poster">
-                       </div>
+                    <div>
+                        <label>Message:*</label><br>
+                        <textarea 
+                            name="message"
+                            v-model="message"
+                            cols="30" rows="5"
+                            class="input" 
+                            placeholder="Please include a brief message" 
+                            required>
+                        </textarea>
                     </div>
-                    <hr>
-                </div>
-                <div>
-                    <h3>Random Fact</h3>
-                    <h6>Favorite Animal</h6>
-                    <div class="skillset">
-                        <div>
-                            <label for="front">Dog</label>
-                            <input class="checkbox" type="checkbox" id="front" value="front-end" name="front"><br>
-                        </div>
-                        <div>
-                            <label for="back">Cat</label>
-                            <input class="checkbox" type="checkbox" id="back" value="back-end" name="back"><br>
-                        </div>
-                        <div>
-                            <label for="full">Horse</label>
-                            <input class="checkbox" type="checkbox" id="full" value="full-stack" name="full"><br>
-                        </div>
-                        <div>
-                            <label for="software">None</label>
-                            <input class="checkbox" type="checkbox" id="software" value="software" name="software"><br>
-                        </div>
-                    </div>
-                    <hr>
                 </div>
                 <br>
                 <div>
-                    <button type="submit">Giddy Up!</button>
+                    <input class="submit" type="submit" value="Giddy Up!">
                 </div>
                 
             </form>
@@ -82,119 +53,144 @@
 <script>
 import Top from "../components/Top.vue";
 import Bottom from "../components/Bottom.vue";
+import emailjs from 'emailjs-com';
+
     export default {
         components: {Top,Bottom},
         name: "contact",
-       
-        // methods: {
-        //     errorHandling: function (whichSection){
-        //     // First Name error
-        //     if (whichSection.id === 'firstName'){
-        //         this.firstError.style.display = 'block';
-        //         lastError.style.display = 'none';
-        //         facError.style.display = 'none';
-        //         typeError.style.display = 'none';
-        //     // Last name error
-        //     } else if (whichSection.id === 'lastName'){
-        //         firstError.style.display = 'none';
-        //         lastError.style.display = 'block';
-        //         facError.style.display = 'none';
-        //         typeError.style.display = 'none';
-        //     // Fac name error
-        //     } else if (whichSection.id === 'facilitator'){
-        //         firstError.style.display = 'none';
-        //         lastError.style.display = 'none';
-        //         facError.style.display = 'block';
-        //         typeError.style.display = 'none';
-        //     } else if (whichSection === 'type'){
-        //         firstError.style.display = 'none';
-        //         lastError.style.display = 'none';
-        //         facError.style.display = 'none';
-        //         typeError.style.display = 'block';
-        //     }
-        // },
+        data() {
+            return {
+            name: '',
+            email: '',
+            message: ''
+            }
+        },
+        methods: {
+            sendEmail(e) {
+                e.preventDefault();
+                console.log('here we go!')
+            try {
+                emailjs.sendForm('service_tkt6spc', 'template_b04s9g2', e.target,
+                'user_Xwa1ypJ5JyG6NVsWgu1MO', {
+                name: this.name,
+                email: this.email,
+                message: this.message
+                })
 
+            } catch(error) {
+                console.log({error})
+            }
+            // Reset form field
+            this.name = ''
+            this.email = ''
+            this.message = ''
+            }
+        ,
+            validateForm:function(e){
+                // Created Error Handlers for 4 Types of Errors
+                const name = document.getElementById('name');
+                const firstError = document.createElement('div');
+                const typeError = document.createElement('div');
 
-        // /**
-        //  * Form Validation
-        //  * @param {e} e form submission
-        //  * @returns false on error
-        //  */
-        // validateForm:function(e){
-        //     // regex for alphabet characters only
-        //     const regex = /^[A-Za-z]+$/;
+                // First Name min length = 2
+                firstError.innerHTML = 'The first name must be at least 2 letters.';
+                firstError.style.color = 'red';
+                firstError.style.fontSize = '14px';
 
-        //     // check length >= 2
-        //     if (fName.value.length < 2 ){
-        //         e.preventDefault();
-        //         errorHandling(fName);
-        //         return false;
-        //     } 
-        //     if (lName.value.length < 2){
-        //         e.preventDefault();
-        //         errorHandling(lName);
-        //         return false;
-        //     }
+                // Names can only contain letters A-Z
+                typeError.innerHTML = 'Names should only include the letters A-Z'
+                typeError.style.fontSize = '14px';
+                typeError.style.color = 'red';
 
-        //     // check for any characters that don't match the regex
-        //     if (!fName.value.match(regex) || !lName.value.match(regex)){
-        //         e.preventDefault();
-        //         errorHandling('type')
-        //         return false;
-        //     }
+                e.preventDefault();
 
-        //     // check for a valid facilitator name
-        //     let match = false;
-        //     const facilitators = ['fazil', 'christian', 'josh', 'chris']
-        //     for (let i = 0; i<facilitators.length; i++){
-        //         if (fac.value.toLowerCase() === facilitators[i]){
-        //             facError.style.display = 'none';
-        //             match = true;
-        //         }
-        //     }
-        //     // facilitator = no match 
-        //     if (!match){
-        //         e.preventDefault();
-        //         errorHandling(fac);
-        //         return false;
-        //     }
-        // }
-        //     }
-        }
+                // regex for alphabet characters only
+                const regex = /^[A-Za-z]+$/;
+
+                let shouldSubmit = true;
+
+                // remove all error elements from DOM
+                firstError.remove();
+                typeError.remove();
+
+                // check length >= 2
+                if (name.value.length < 2) {
+                    shouldSubmit = false;
+                    name.appendChild(firstError);  
+                }
+
+                // check for any characters that don't match the regex
+                if (!name.value.match(regex)) {
+                    shouldSubmit = false;
+                    name.appendChild(typeError);
+                }
+
+                if(shouldSubmit){
+                    console.log('simulate submit')
+                    this.sendEmail(e);
+                    // this.submit();
+                }
+            
+            }}
+    }
 </script>
 
 <style scoped>
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 30px;
+        border: 1px solid black;
+        border-radius: 10px;
+        text-align: center;
+        background-color: black;
+        width: 70%;
+        color: lightgray;
+        margin: auto;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 30px;
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align: center;
-    background-color: black;
-    width: 70%;
-    color: lightgray;
-    margin: auto;
+    .input, textarea{
+        width: 80%;
+        height: 30px;
+        margin: 10px
     }
 
-input{
-    width: 80%;
-    height: 30px;
-    margin: 10px
-}
+    .error{
+        font-size: 14px;
+        color: red;
+        display: none;
+    }
 
-.error{
-    font-size: 14px;
-    color: red;
-    display: none;
-}
+    .skillset, .ima{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
-.skillset, .ima{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+    .submit{
+         text-transform: uppercase;
+        text-decoration: none;
+        background-color: black;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px;
+        flex-grow: 1;
+        text-align: center;
+        color: gold;
+    }
 
-</style>
+    .submit:visited{
+        color: lightblue;
+    }
+
+    .submit:hover{
+        color: gold;
+        transform: rotate(1deg);
+        cursor: pointer;
+    }
+    </style>
+
+// @submit="errorHandling" 
+//             method="POST" 
+//             action="https://bucs601.com/submit.php"

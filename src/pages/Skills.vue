@@ -74,7 +74,8 @@
 
     .skills div{
         margin: 0 auto;
-        border: 2px dashed white;
+        border: 6px dashed white;
+        border-radius: 10px;
         padding: 20px;
         background-color: gold;
         color: black;

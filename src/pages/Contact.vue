@@ -10,22 +10,32 @@
       <section>
       <h2>Get in Touch</h2>
       <hr>
-      <br>
-            <form id="form" @submit="validateForm">
+      <br><div v-if="sent">
+                <h3>Message Delivered</h3>
+            </div>
+            <form id="form" @submit="validateForm" novalidate="true">
                 <div>
                     <h2>Contact Form</h2>
+                    <p class="error" v-if="errors.length">
+                        <b>Please correct the following error(s):</b>
+                        <ul>
+                        <li v-for="error in errors" :key="error">{{ error }}</li>
+                        </ul>
+                    </p>
                     <div id="nameDiv">
                         <label for="name">Name:*</label><br>
-                        <input class="input" type="text" name="name" id="name" required>
+                        <input class="input" v-model="name" type="text" name="name" id="name" required>
                     </div>
-                    <div id="facDiv">
+                    <div>
                         <label for="email">Email:*</label><br>
-                        <input class="input" type="email" name="email" id="email" required>
+                        <input class="input" v-model="email" type="email" name="email" id="email" required>
                     </div>
                     <div>
                         <label>Message:*</label><br>
                         <textarea 
                             name="message"
+                            id="message"
+                            v-model="message"
                             cols="30" 
                             rows="5"
                             class="input" 
@@ -56,15 +66,17 @@ export default {
     components: {Top,Bottom},
     data() {
         return {
-        name: '',
-        email: '',
-        message: ''
+        sent: false,
+        errors: [],
+        name: null,
+        email: null,
+        message: null
         }
     },
     methods: {
+        // sends me an email with the information supplied
         sendEmail(e) {
             console.log('sending email')
-            e.preventDefault();
         try {
             emailjs.sendForm('service_tkt6spc', 'template_b04s9g2', e.target,
             'user_Xwa1ypJ5JyG6NVsWgu1MO', {
@@ -72,62 +84,49 @@ export default {
             email: this.email,
             message: this.message
             })
-            alert('Sent!');
+            alert('Message delivered')
 
         } catch(error) {
             console.log({error})
         }
         // Reset form field
-        this.name = ''
-        this.email = ''
-        this.message = ''
+        this.name = null,
+        this.email = null,
+        this.message = null
         },
-
+        // validates form content
         validateForm(e){
-            console.log('validating')
-            // Created Error Handlers 
-            const name = document.getElementById('name');
-            const nameError = document.createElement('div');
-            const typeError = document.createElement('div');
-
-            // First Name min length = 2
-            nameError.innerHTML = 'The first name must be at least 2 letters.';
-            nameError.style.color = 'red';
-            nameError.style.fontSize = '14px';
-
-            // Names can only contain letters A-Z
-            typeError.innerHTML = 'Names should only include the letters A-Z'
-            typeError.style.fontSize = '14px';
-            typeError.style.color = 'red';
-
-            e.preventDefault();
-
-            // regex for alphabet characters only
+            this.errors = [];
             const regex = /^[A-Za-z]+$/;
-
-            let shouldSubmit = true;
-
-            // remove all error elements from DOM
-            nameError.remove();
-            typeError.remove();
-
-            // check length >= 2
-            if (name.value.length < 2) {
-                shouldSubmit = false;
-                name.appendChild(nameError);  
-            }
-
-            // check for any characters that don't match the regex
-            if (!name.value.match(regex)) {
-                shouldSubmit = false;
-                name.appendChild(typeError);
-            }
-
-            if(shouldSubmit){
+            const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!this.name || this.name.length < 2) {
+                this.errors.push("Name required. Please check for more than 1 character.");
+                e.preventDefault();
+                return;
+            } if (!this.name.match(regex)) {
+                 this.errors.push("Please ensure the name contains letters only.");
+                 e.preventDefault();
+                 return;
+            } if (!this.email) {
+                this.errors.push('Email required.');
+                e.preventDefault();
+                return;
+            } if (!this.email.match(emailRegex)){
+                this.errors.push('Please enter valid email.');
+                e.preventDefault();
+                return;     
+            } if (!this.message){
+                this.errors.push('Please enter brief message.');
+                e.preventDefault();
+                return; 
+            } if (!this.errors.length) {
+                console.log('sending')
+                e.preventDefault();
                 this.sendEmail(e);
             }
-        }}
-}
+            }
+        }
+    }
 </script>
 
 <style scoped>
@@ -151,7 +150,6 @@ export default {
     .error{
         font-size: 14px;
         color: red;
-        display: none;
     }
 
     .submit{

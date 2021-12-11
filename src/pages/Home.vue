@@ -46,28 +46,8 @@ export default {
   
 </script>
 
-<style>
+<style scoped>
     h3{
         color: gold;
     }
-
-    .landing-icons-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    }
-
-    .tab1 {
-        tab-size: 4;
-        }
-  
-    .tab2 {
-        tab-size: 8;
-    }
-
-    .tab3 {
-        tab-size: 12;
-    }
-    
 </style>

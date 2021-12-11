@@ -54,7 +54,6 @@ import emailjs from 'emailjs-com';
 
 export default {
     components: {Top,Bottom},
-    name: "contact",
     data() {
         return {
         name: '',

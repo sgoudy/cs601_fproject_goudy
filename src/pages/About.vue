@@ -9,14 +9,11 @@
           </figure>
           <a class="resume" href="/ShelbyGoudyResume.pdf" target="_blank" download>View My Resume</a><br><br>
         <hr>
-        <h2>Background</h2>
-        <p>
-          From Annapolis, MD, I went to school at the oldest private military college in the U.S., Norwich University. Located in podunk Northfield, Vermont, it was the greatest life choice I ever made. Since then I've traveled to dozens of countries and seen 5 of 7 continents. This home-body enjoys civilian life and working from home!
-        </p>
+        <h2>About</h2>
+        <p>I'm a quick study, enjoy working out, and prefer animals to people.<br> Reliable and respectful of others time, I think communication can be the greatest asset to team work.</p>
         <br />
-        <hr>
         <section class="table">
-            <button v-on:click="getSchoolData">View School Info</button>
+            <button v-if="fetchedData == null" @click="getSchoolData">View School Info</button>
                 <table v-if="fetchedData != null">
                     <th>Name</th>
                     <th>Major</th>
@@ -31,13 +28,11 @@
                 </table>
           <br />
         </section>
-        <hr>
         <section>
           <h2>Favorite Deployment</h2>
           <img src="../assets/afghan_rex.jpg" alt="Me in camouflage with two Afghan dogs">
-          <p>Met these guys on my last deployment. I kept them healthy and they kept me safe. <br><br>Thanks Rex (and unnamed puppy)! I hope you boys are okay.</p>
+          <p>Met these guys on my last deployment. I kept them healthy and they kept me safe. <br>Thanks Rex (and unnamed puppy)! I hope you boys are okay.</p>
         </section>
-        <hr>
         <section>
           <h2>Favorite Part About Working from Home?</h2>
           <video src="@/assets/leaves.mp4" controls></video>
@@ -57,7 +52,6 @@ import Bottom from "../components/Bottom.vue";
 
 export default {
     components: { Top, Bottom},
-    name: "about",
     data() {
         return {
             fetchedData: null

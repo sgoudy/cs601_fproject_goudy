@@ -4,7 +4,7 @@
         <Top />
         <section class="right">
             <h2>Some Full-Stack Projects</h2>
-            <button v-on:click="getPortfolio">Let Me See!</button>
+            <button v-if="projects == null" @click="getPortfolio">Let Me See!</button>
             <section v-if="projects != null" class="portfolio">
                 <article v-for="project in projects" :key="`${project.key}`">
                     <h4>{{project.name}}</h4>
@@ -25,7 +25,6 @@
     import Bottom from "../components/Bottom.vue";
     export default {
         components: {Top, Bottom},
-        name: "portfolio",
         data(){
             return{
                 projects: null

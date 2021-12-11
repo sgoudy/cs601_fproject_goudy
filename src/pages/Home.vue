@@ -16,13 +16,13 @@
             </p>
             <a class="resume" href="/ShelbyGoudyResume.pdf" download>View My Resume</a><br><br>
             <p>Marine Corps Officer and Osprey Pilot with over 10 years of service.</p>
-             
-           <p>Gear-head, nature lover, tinkerer.</p>
-    
+            <p>Gear-head, nature lover, tinkerer.</p>
             <p>Stable-hand & Pony Adopter</p>
-    
+            <div>
+                
+            </div>
             <h3>Take a look around!</h3>
-            <!-- <button v-on:click="startProgram" >Play with the Calculator & Customizer!</button> -->
+            <img @mouseover="active = true" @mouseout="active = false" :src="active ? URLprimary : URLsec" alt="front photo of Lu the pony"/>
         </section>
         </section>
     <Bottom />
@@ -35,100 +35,22 @@ import Bottom from "../components/Bottom.vue";
 
 export default {
   components: { Top, Bottom },
-  name: "home",
-  methods: {
-    startProgram: function(){
-    // initial welcome
-    alert('Welcome to my page!');
-    let viewer = "";
-    while (viewer == ''){
-        viewer = prompt("Please enter your name: ");
-    }
-
-    // return viewers name as alert and inside document (ES6)
-    alert(`Welcome, ${viewer}!`)
-    let header = document.querySelector('#heading');
-    header.innerHTML = `Welcome to my Round Pen, ${viewer}!`;
-    this.request();
-},
-
-
-/**
- * Requests numbers from User
- */
-    request: function(){
-    let firstNum="";
-    let secondNum="";
-    // check for number value
-    while (isNaN(firstNum) || firstNum == ""){
-        firstNum = prompt('Please enter a number: ');
-    }
-    while (isNaN(secondNum) || secondNum == ""){
-        secondNum = prompt('Please enter another number: ');
-    }
-    this.calculator(firstNum, secondNum);
-} ,
-
-
-/**
- * Converts num to decimals, adds, returns total
- * @param {*} first 
- * @param {*} sec 
- * @returns 
- */
-    calculator: function(first, sec){
-    // Convert to float to allow for decimals
-    const total = parseFloat(first) + parseFloat(sec);
-    this.responses(total)
-    return total;
-},
-
-/**
- * Determines big or small number
- * @param {total} total float passed from calculator()
- */
-    responses: function(total){
-    // using concatenation instead of ES6
-    alert('The sum of your two numbers is ' + total + '.');
-   
-    // conditional statement to check for size
-    if (total > 10){
-        alert("That is a big number!");
-    } else {
-        alert("That is a small number.");
-    }
-    this.rerun();
-},
-
-    rerun: function(){
-    // loop with prompt
-    // eslint-disable-next-line no-constant-condition
-    while(true){
-        const response = prompt('Would you like to add 2 different numbers? (y/n)');
-        // check for no or empty answer, if so, exit
-        if (response.toLowerCase() === 'n'){
-            break;
-        // if yes
-        } else if (response.toLowerCase() === 'y'){
-            this.request();
-        } else {
-            alert("Please answer with 'y' or 'n' only");
-        }
-    }
-    alert("Thanks for playing!");
+  data(){
+      return {
+          active: true,
+          URLprimary: '/Lu1.jpg',
+          URLsec: '/Lu2.jpg'
+      }
+  }
 }
-} 
-}
-
-
-/**
- * Function handles if User requests to play again or 
- * quit
- */
-
+  
 </script>
 
 <style>
+    h3{
+        color: gold;
+    }
+
     .landing-icons-container{
     display: flex;
     flex-direction: row;

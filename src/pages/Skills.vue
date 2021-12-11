@@ -26,7 +26,6 @@
                             <li>Planning & Scheduling</li>
                         </ul>
                     </div>
-                    <hr>
                     <div>
                         <h3>Software</h3>
                         <p>2 years experience</p>
@@ -42,9 +41,9 @@
                         </ul>
                     </div>
                 </section> 
-                <hr><br>
-                    <img src="../assets/aplus.png" height="70" alt="A plus">
-                    <p>Team Lead for <a href="https://diary-library.herokuapp.com/" target="_blank">Capstone Project</a><br>...not optimized for mobile :(</p>
+                <br>
+                <img src="../assets/aplus.png" height="70" alt="A plus"><br>
+                <button><a href="https://diary-library.herokuapp.com/" target="_blank">Capstone Project Lead<br><i>...not optimized for mobile :(</i></a></button>
             <br>
             </section>
           </section>
@@ -56,8 +55,7 @@
     import Top from "../components/Top.vue";
     import Bottom from "../components/Bottom.vue";
     export default {
-        components: {Top, Bottom},
-        name: "skills"
+        components: {Top, Bottom}
     }
 </script>
 
@@ -65,16 +63,29 @@
 
     ul{
         list-style-type: none;
+        padding: 0px;
     }
 
     .skills{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .skills div{
         margin: 0 auto;
+        border: 2px dashed white;
+        padding: 20px;
+        background-color: gold;
+        color: black;
+    }
+
+    .skills p {
+        color: black;
+    }
+
+    .skills li{
+        text-align: left;
     }
 
 @media screen and (max-width: 992px) {
@@ -83,6 +94,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+    }
+
+    .skills div{
+        margin: 20px;
     }
 
     ul{

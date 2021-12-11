@@ -22,7 +22,7 @@
                 
             </div>
             <h3>Take a look around!</h3>
-            <img @mouseover="active = true" @mouseout="active = false" :src="active ? URLprimary : URLsec" alt="front photo of Lu the pony"/>
+            <img @mouseover="active = true" @mouseout="active = false" :src="active ? URLprimary : URLsec" :alt="active ? 'front photo of Lu the pony' : 'side photo of Lu the pony'"/>
         </section>
         </section>
     <Bottom />

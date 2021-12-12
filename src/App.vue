@@ -73,6 +73,21 @@
         visibility: hidden;
     }
 
+
+    figure {
+        animation-duration: 1.5s;
+        animation-name: slidein;
+        }
+
+    @keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 20%;
+    }}
+
     #hamburger{
         display: none;
     }

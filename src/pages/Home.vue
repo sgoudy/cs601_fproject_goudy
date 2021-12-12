@@ -18,8 +18,8 @@
         <p>Gear-head, nature lover, tinkerer.</p>
         <p>Stable-hand & pony adopter</p>
         <h3>Take a look around!</h3>
-        <img @mouseover="active = true" @mouseout="active = false" :src="active ? URLprimary : URLsec" :alt="active ? 'front photo of Lu the pony' : 'side photo of Lu the pony'"/>
-        <img @mouseover="secActive = true" @mouseout="secActive = false" :src="secActive ? URLter : URLfour" :alt="secActive ? 'sun-backed side photo of Lu the pony' : 'sun-backed front photo of Lu the pony'"/>
+        <img class="horse" @mouseover="active = true" @mouseout="active = false" :src="active ? URLprimary : URLsec" :alt="active ? 'front photo of Lu the pony' : 'side photo of Lu the pony'"/>
+        <img class="horse" @mouseover="secActive = true" @mouseout="secActive = false" :src="secActive ? URLter : URLfour" :alt="secActive ? 'sun-backed side photo of Lu the pony' : 'sun-backed front photo of Lu the pony'"/>
         </section>
     </section>
     <Bottom />
@@ -51,7 +51,7 @@ export default {
         color: gold;
     }
     
-    img{
+    .horse{
         margin: 20px;
         border-radius: 10px;
     }

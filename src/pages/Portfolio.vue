@@ -3,6 +3,9 @@
     <section class="container">
         <Top />
         <section class="right">
+            <figure>
+            <img src="/Roscoe.jpg" alt="New dog named Roscoe! He's a blue heeler." >
+        </figure>
             <h2>Some Full-Stack Projects</h2>
             <button v-if="projects == null" @click="getPortfolio">Let Me See!</button>
             <div v-if="projects != null" class="portfolio">

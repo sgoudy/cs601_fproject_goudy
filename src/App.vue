@@ -213,6 +213,7 @@
         flex-direction: column;
         width: 50%;
         margin: auto;
+        border-radius: 10px;
     }
   
     #hamburger{

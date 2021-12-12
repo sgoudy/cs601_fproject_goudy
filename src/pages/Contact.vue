@@ -10,11 +10,8 @@
       <section>
       <h2>Get in Touch</h2>
       <hr>
-      <br><div v-if="sent">
-                <h3>Message Delivered</h3>
-            </div>
+      <br>
             <form id="form" @submit="validateForm" novalidate="true">
-                <div>
                     <h2>Contact Form</h2>
                     <p class="error" v-if="errors.length">
                         <b>Please correct the following error(s):</b>
@@ -43,7 +40,6 @@
                             required>
                         </textarea>
                     </div>
-                </div>
                 <br>
                 <div>
                     <input class="submit" type="submit" value="Giddy Up!">
@@ -174,7 +170,3 @@ export default {
         cursor: pointer;
     }
     </style>
-
-// @submit="errorHandling" 
-//             method="POST" 
-//             action="https://bucs601.com/submit.php"

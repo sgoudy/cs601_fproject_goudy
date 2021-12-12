@@ -10,7 +10,6 @@
             </figcaption>
         </figure>
         <hr>
-        <h2 id="heading"></h2>
         <p>
             * Seeking REMOTE Opportunities in Defense, Aviation, or Automotive *
         </p>
@@ -20,6 +19,7 @@
         <p>Stable-hand & Pony Adopter</p>
         <h3>Take a look around!</h3>
         <img @mouseover="active = true" @mouseout="active = false" :src="active ? URLprimary : URLsec" :alt="active ? 'front photo of Lu the pony' : 'side photo of Lu the pony'"/>
+        <img @mouseover="secActive = true" @mouseout="secActive = false" :src="secActive ? URLter : URLfour" :alt="secActive ? 'sun-backed side photo of Lu the pony' : 'sun-backed front photo of Lu the pony'"/>
         </section>
     </section>
     <Bottom />
@@ -35,8 +35,11 @@ export default {
   data(){
       return {
           active: true,
+          secActive: true,
           URLprimary: '/Lu1.jpg',
-          URLsec: '/Lu2.jpg'
+          URLsec: '/Lu2.jpg',
+          URLter: '/Lu3.PNG',
+          URLfour: '/Lu4.PNG',
       }
   }
 }
@@ -47,25 +50,9 @@ export default {
     h3{
         color: gold;
     }
-    .js-scroll {
-        transition: inherit;
-        }
- 
-    .js-scroll.scrolled {
-        background-color: aquamarine;
+    
+    img{
+        margin: 20px;
+        border-radius: 10px;
     }
-    .scrolled.slide-left {
-        animation: slide-in-left 1s ease-in-out both;
-    }
-
-    @keyframes slide-in-left {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 </style>

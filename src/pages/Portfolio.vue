@@ -5,7 +5,7 @@
         <section class="right">
             <h2>Some Full-Stack Projects</h2>
             <button v-if="projects == null" @click="getPortfolio">Let Me See!</button>
-            <section v-if="projects != null" class="portfolio">
+            <div v-if="projects != null" class="portfolio">
                 <article v-for="project in projects" :key="`${project.key}`">
                     <h4>{{project.name}}</h4>
                     <img :src="project.src" :alt="project.alt" /><br>
@@ -13,7 +13,7 @@
                     <a class="button" :href="project.hrefLive" target="_blank">Live</a>
                 </article>
             
-            </section>
+            </div>
           </section>
         </section>
         <Bottom />

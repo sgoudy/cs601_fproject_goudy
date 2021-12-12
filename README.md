@@ -4,14 +4,10 @@ https://sgoudy.netlify.app
 
 # cs601_HW6_goudy
 
-Brand new Vue user but I've started implementing it here for the purpose of building out my final project!
-
-## Part 1: JSON
-There are two JSON files (`portfolioData.json & schoolData.json`, located in the `public` folder).
-I access `data.json` in the config file to dynamically render my school data table on the About page.  
-
-## Part 2: JSON and Fetch
-Fetching is implemented on the About page and Portfolio page via Button Click!
+## Show/Hide
+All 4 images on bottom of home page. Horse images.. Makes it look like she's moving.
+Other proof of knowledge: Contact Form is fully functional. Validates prior to submission. Sends me an email upon submission.
+Plan on implementing some animation but will use library for that once class is complete.
 
 ## Project setup
 ```

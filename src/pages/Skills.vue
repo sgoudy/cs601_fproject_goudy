@@ -42,8 +42,11 @@
                     </div>
                 </section> 
                 <br>
-                <img src="../assets/aplus.png" height="70" alt="A plus"><br>
-                <button><a href="https://diary-library.herokuapp.com/" target="_blank">Capstone Project Lead<br><i>...not optimized for mobile :(</i></a></button>
+                <img src="../assets/aplus.png" height="70" alt="A plus"><br><br>
+                <div class="resume">
+                    <a href="https://diary-library.herokuapp.com/" target="_blank">Capstone Project Lead<i>...not optimized for mobile :(</i></a>
+                </div>
+                
             <br>
             </section>
           </section>

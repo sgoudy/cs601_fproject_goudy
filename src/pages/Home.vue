@@ -5,9 +5,6 @@
         <section class="right">
         <figure>
             <img src="../assets/hiking.jpg" alt="Shelby on the left, Joey her red heeler in the middle, and Kevin on the right. Sitting on a snow covered log in the woods." >
-            <figcaption>
-                Shelby, Joey (red heeler), and Kevin in the Laurel Mountains.
-            </figcaption>
         </figure>
         <hr>
         <p>

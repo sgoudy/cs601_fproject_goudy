@@ -5,7 +5,6 @@
     <section class="right">
       <figure>
         <img src="../assets/meJoeKev.jpg" alt="Shelby, Joey, Kevin (left to right) for a closeup in winter clothes in the woods.">
-          <figcaption>Shelby, Joey, and Kevin at Flat Rock.</figcaption>
       </figure>
       <section>
       <h2>Get in Touch</h2>

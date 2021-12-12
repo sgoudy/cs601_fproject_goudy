@@ -1,7 +1,7 @@
 <template>
     <header class="leftSidebar">
         <div id="name-title">
-            <h1>Shelby 'EVA' Goudy </h1>
+            <a href="/"><h1>Shelby 'EVA' Goudy </h1></a>
             <h2> MBA, MSSD</h2>
             <hr>
         </div>

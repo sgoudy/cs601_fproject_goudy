@@ -16,7 +16,7 @@
         <a class="resume" href="/ShelbyGoudyResume.pdf" download>View My Resume</a><br><br>
         <p>Marine Corps Officer and Osprey Pilot with over 10 years of service.</p>
         <p>Gear-head, nature lover, tinkerer.</p>
-        <p>Stable-hand & Pony Adopter</p>
+        <p>Stable-hand & pony adopter</p>
         <h3>Take a look around!</h3>
         <img @mouseover="active = true" @mouseout="active = false" :src="active ? URLprimary : URLsec" :alt="active ? 'front photo of Lu the pony' : 'side photo of Lu the pony'"/>
         <img @mouseover="secActive = true" @mouseout="secActive = false" :src="secActive ? URLter : URLfour" :alt="secActive ? 'sun-backed side photo of Lu the pony' : 'sun-backed front photo of Lu the pony'"/>

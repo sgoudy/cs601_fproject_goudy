@@ -10,7 +10,7 @@
           <a class="resume" href="/ShelbyGoudyResume.pdf" target="_blank" download>View My Resume</a><br><br>
         <hr>
         <h2>About</h2>
-        <p>I'm a quick study, enjoy working out, and prefer animals to people.<br> Reliable and respectful of others time, I think communication can be the greatest asset to team work.</p>
+        <p>I'm a quick study, enjoy working out, and prefer animals to people.<br> I'm Reliable and respectful of others time. I believe communication to be one of my greatest assets.</p>
         <br />
         <section class="table">
             <button v-if="fetchedData == null" @click="getSchoolData">View School Info</button>

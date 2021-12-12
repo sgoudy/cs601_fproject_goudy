@@ -75,7 +75,7 @@
 
 
     figure {
-        animation-duration: 1.5s;
+        animation-duration: 1s;
         animation-name: slidein;
         }
 

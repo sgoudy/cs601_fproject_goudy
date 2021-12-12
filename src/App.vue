@@ -113,7 +113,6 @@
         line-height: 1.7;
     }
 
-
 @media screen and (max-width: 992px) {
 
     form{

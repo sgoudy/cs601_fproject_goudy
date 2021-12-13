@@ -61,7 +61,7 @@
         flex-direction: row;
     }
 
-    button.menu  {
+    .menu  {
         background-color: transparent;
         display: none;
         visibility: hidden;
@@ -191,20 +191,23 @@
 
 @media screen and (max-width: 414px) {
   
-    button.menu  {
+    .menu  {
         background-color: transparent;
         visibility: visible;
         display: flex;
-        margin: auto;
+        margin: 0px 20px;
         padding: 5px;
         border: none;
+        flex-direction: row;
+        justify-content:flex-end;
+        align-items: center;
     }
 
     nav{
        display: none;
         position: absolute;
         top: 80px;
-        left: 25%;
+        left: 40%;
         flex-direction: column;
         width: 50%;
         margin: auto;
@@ -212,8 +215,7 @@
     }
   
     #hamburger{
-        display:block;
-        margin: auto;
+        display:inline;
         position: relative;
     } 
 

@@ -71,7 +71,6 @@ export default {
     methods: {
         // sends me an email with the information supplied
         sendEmail(e) {
-            console.log('sending email')
         try {
             emailjs.sendForm('service_tkt6spc', 'template_b04s9g2', e.target,
             'user_Xwa1ypJ5JyG6NVsWgu1MO', {
@@ -115,7 +114,6 @@ export default {
                 e.preventDefault();
                 return; 
             } if (!this.errors.length) {
-                console.log('sending')
                 e.preventDefault();
                 this.sendEmail(e);
             }

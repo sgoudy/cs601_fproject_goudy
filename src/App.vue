@@ -10,12 +10,6 @@
         margin: 0;
     }
 
-    figcaption{
-        font-style: italic;
-        color: lightgrey;
-        font-size: 12px;
-    }
-
     h1{
         color: gold;
         font-size: 35px;
@@ -115,6 +109,7 @@
 
     .right img, video{
         max-height: 400px;
+        max-width: 80%;
     }
 
     .right{

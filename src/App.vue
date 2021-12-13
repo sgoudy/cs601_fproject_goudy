@@ -207,7 +207,7 @@
        display: none;
         position: absolute;
         top: 80px;
-        left: 40%;
+        right: 0;
         flex-direction: column;
         width: 50%;
         margin: auto;

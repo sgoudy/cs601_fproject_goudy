@@ -79,7 +79,7 @@
     }
 
     to {
-        margin-left: 12%;
+        margin-left: 40px;
     }}
 
     #hamburger{
